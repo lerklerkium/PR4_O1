@@ -1,0 +1,59 @@
+<Page x:Class="PR4_O.Pages.Task3Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:ctrl="clr-namespace:PR4_O.Controls"
+      xmlns:oxy="http://oxyplot.org/wpf"
+      Title="Задание 3">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <ctrl:BackButton Grid.Row="0"/>
+
+        <Image x:Name="FormulaImage" Grid.Row="1" MaxHeight="120" Margin="0,10"
+               HorizontalAlignment="Center" ToolTip="Формула задания 3"/>
+
+        <Grid Grid.Row="2" Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" MinWidth="280">
+                <StackPanel Orientation="Horizontal" Margin="0,5">
+                    <Label Content="b =" Width="80" ToolTip="Параметр b"/>
+                    <TextBox x:Name="TbB" Width="150" ToolTip="Введите значение b"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5">
+                    <Label Content="x0 =" Width="80" ToolTip="Начальное значение x"/>
+                    <TextBox x:Name="TbX0" Width="150" ToolTip="Введите x0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5">
+                    <Label Content="xk =" Width="80" ToolTip="Конечное значение x"/>
+                    <TextBox x:Name="TbXk" Width="150" ToolTip="Введите xk"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5">
+                    <Label Content="dx =" Width="80" ToolTip="Шаг по x"/>
+                    <TextBox x:Name="TbDx" Width="150" ToolTip="Введите шаг dx"/>
+                </StackPanel>
+                <Label Content="Ответ:" Margin="0,10,0,0" ToolTip="Таблица значений"/>
+                <TextBox x:Name="TbResult" Width="230" Height="150" IsReadOnly="True"
+                         Background="LightGray" VerticalScrollBarVisibility="Auto"
+                         HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap"
+                         ToolTip="Результаты (только чтение)"/>
+                <Button Content="Вычислить" Padding="20,8" Margin="0,5"
+                        HorizontalAlignment="Left" Click="Calculate_Click3"
+                        ToolTip="Вычислить и построить график"/>
+                <Button Content="Очистить" Padding="20,8" Margin="0,5"
+                        HorizontalAlignment="Left" Click="Clear_Click"
+                        ToolTip="Очистить все поля и график"/>
+            </StackPanel>
+
+            <oxy:PlotView Grid.Column="1" x:Name="PlotView" Margin="10,0,0,0"
+                          ToolTip="График функции y(x)"/>
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="PR4_O/PR4_O.csproj" />
+  <Project Path="UnitTestProject/UnitTestProject.csproj" Id="8e44c2f5-78d0-4280-9419-9fd98841f6ef" />
+</Solution>

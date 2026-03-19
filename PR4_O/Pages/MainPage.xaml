@@ -1,0 +1,18 @@
+<Page x:Class="PR4_O.Pages.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Главная">
+    <Grid>
+        <Button Content="Выйти" HorizontalAlignment="Left" VerticalAlignment="Top"
+                Margin="10" Padding="15,5" Click="Exit_Click"
+                ToolTip="Завершить работу приложения"/>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="Задание 1" Width="200" Height="50" Margin="0,10"
+                    Click="Task1_Click" ToolTip="Открыть задание 1"/>
+            <Button Content="Задание 2" Width="200" Height="50" Margin="0,10"
+                    Click="Task2_Click" ToolTip="Открыть задание 2"/>
+            <Button Content="Задание 3" Width="200" Height="50" Margin="0,10"
+                    Click="Task3_Click" ToolTip="Открыть задание 3"/>
+        </StackPanel>
+    </Grid>
+</Page>

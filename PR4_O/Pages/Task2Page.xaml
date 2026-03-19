@@ -1,0 +1,58 @@
+<Page x:Class="PR4_O.Pages.Task2Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:ctrl="clr-namespace:PR4_O.Controls"
+      Title="Задание 2">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <ctrl:BackButton Grid.Row="0"/>
+
+        <Image x:Name="FormulaImage" Grid.Row="1" MaxHeight="150" Margin="0,10"
+               HorizontalAlignment="Center" ToolTip="Формула задания 2"/>
+
+        <Grid Grid.Row="2" Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0">
+                <StackPanel Orientation="Horizontal" Margin="0,5">
+                    <Label Content="x =" Width="80" ToolTip="Переменная x"/>
+                    <TextBox x:Name="TbX" Width="150" ToolTip="Введите значение x"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5">
+                    <Label Content="y =" Width="80" ToolTip="Переменная y"/>
+                    <TextBox x:Name="TbY" Width="150" ToolTip="Введите значение y"/>
+                </StackPanel>
+                <GroupBox Header="Выбор f(x)" Margin="0,10" Padding="5"
+                          ToolTip="Выберите функцию f(x)">
+                    <StackPanel>
+                        <RadioButton x:Name="RbSh" Content="sh(x) — гиперболический синус"
+                                     Margin="0,3" IsChecked="True" ToolTip="f(x) = sh(x)"/>
+                        <RadioButton x:Name="RbX2" Content="x² — квадрат"
+                                     Margin="0,3" ToolTip="f(x) = x²"/>
+                        <RadioButton x:Name="RbExp" Content="eˣ — экспонента"
+                                     Margin="0,3" ToolTip="f(x) = eˣ"/>
+                    </StackPanel>
+                </GroupBox>
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,5">
+                    <Label Content="Ответ =" Width="80" ToolTip="Результат"/>
+                    <TextBox x:Name="TbResult" Width="150" IsReadOnly="True"
+                             Background="LightGray" ToolTip="Результат (только чтение)"/>
+                    <Button Content="Очистить" Margin="10,0,0,0" Padding="15,5"
+                            Click="Clear_Click" ToolTip="Очистить все поля"/>
+                </StackPanel>
+            </StackPanel>
+
+            <Button Grid.Column="1" Content="Вычислить" Padding="20,10"
+                    VerticalAlignment="Top" Margin="20,5,0,0"
+                    Click="Calculate_Click2" ToolTip="Вычислить по формуле"/>
+        </Grid>
+    </Grid>
+</Page>
